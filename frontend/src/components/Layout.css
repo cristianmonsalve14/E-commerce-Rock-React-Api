@@ -1,0 +1,48 @@
+/* src/components/Layout.css */
+.layout-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+.layout-container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .layout-container {
+    padding: 1rem 0.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+}
+
+section, .hero-section, .catalogo-section, .contacto-section, .registro-section, .login-section, .admin-section, .blog-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 2rem auto;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+p {
+  text-align: justify;
+  color: #555;
+}
+
+

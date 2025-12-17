@@ -1,0 +1,172 @@
+/* Hero.css - Mejora visual para el Hero */
+.hero {
+  background: linear-gradient(rgba(30,30,30,0.92), rgba(30,30,30,0.92)), url('/img/rockandroll.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 3.5rem 1.2rem 3rem 1.2rem;
+  position: relative;
+  border-radius: 22px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2.5px solid #7c3aed;
+}
+.hero-title {
+  font-family: 'Rock Salt', cursive, sans-serif;
+  font-size: 2.7rem;
+  margin-bottom: 1.1rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 18px #7c3aedcc, 0 1px 0 #000a;
+}
+.hero-description {
+  font-size: 1.18rem;
+  color: #e0e0e0;
+  margin-bottom: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.hero .btn {
+  font-size: 1.1rem;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px #0003;
+  transition: background 0.2s, transform 0.2s;
+}
+.hero .btn:hover {
+  background: #7c3aed;
+  transform: scale(1.05);
+}
+.hero-catalogo-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #f39c12 60%, #a21caf 100%);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.02rem;
+  padding: 0.35em 1.1em;
+  border-radius: 18px;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 0 12px #a21caf88;
+  letter-spacing: 1px;
+  animation: pulseBadge 1.6s infinite alternate;
+}
+@keyframes pulseBadge {
+  0% { box-shadow: 0 0 12px #a21caf88; }
+  100% { box-shadow: 0 0 32px #f39c12cc; }
+}
+.hero-catalogo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.1rem;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px #0003;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.hero-catalogo-btn:hover {
+  background: #7c3aed;
+  transform: scale(1.05);
+  box-shadow: 0 0 24px #a21cafcc;
+}
+.hero-catalogo-guitar {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px #7c3aedcc);
+  transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), filter 0.2s;
+  will-change: transform;
+}
+.hero-catalogo-btn:hover .hero-catalogo-guitar {
+  transform: rotate(-18deg) scale(1.18);
+  filter: drop-shadow(0 0 18px #f39c12cc) brightness(1.2);
+}
+.hero-catalogo-subtext {
+  margin-top: 1.2rem;
+  color: #ffe082;
+  font-size: 1.01rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px #23272f99;
+  font-weight: 500;
+  animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1) 0.4s both;
+}
+.hero-poleras-img {
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 18px #a21caf55;
+  margin: 0 auto;
+  display: block;
+}
+.hero-poleras-text {
+  margin-top: 1.5rem;
+  color: #fff;
+  text-align: center;
+  padding: 0 1rem;
+}
+.hero-poleras-text h2 {
+  font-family: 'Rock Salt', cursive, sans-serif;
+  font-size: 1.7rem;
+  margin-bottom: 0.7rem;
+  color: #f39c12;
+  text-shadow: 0 0 12px #a21cafcc, 0 1px 0 #000a;
+}
+.hero-poleras-text p {
+  font-size: 1.08rem;
+  color: #e0e0e0;
+  text-shadow: 0 0 8px #23272f99;
+  margin: 0 auto;
+  max-width: 500px;
+}
+.hero-poleras-btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 1.08rem;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px #0003;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.hero-poleras-btn:hover {
+  background: #f39c12;
+  color: #23272f;
+  transform: scale(1.05);
+  box-shadow: 0 0 24px #a21cafcc;
+}
+@media (max-width: 800px) {
+  .hero-poleras-img {
+    height: 140px;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+    border-radius: 10px;
+  }
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+  }
+}

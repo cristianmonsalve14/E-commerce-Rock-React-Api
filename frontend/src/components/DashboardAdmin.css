@@ -1,0 +1,119 @@
+.dashboard-admin {
+  padding: 2.5rem 2rem;
+  background: #181818;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.dashboard-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.dashboard-title-highlight {
+  color: #ff9800;
+  font-weight: 900;
+  margin-left: 0.5rem;
+}
+.dashboard-cards {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.dashboard-card {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  position: relative;
+  margin-bottom: 1rem;
+}
+.dashboard-card-icon {
+  font-size: 2.7rem;
+  margin-bottom: 0.7rem;
+  color: #ffd700;
+}
+.dashboard-card-value {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #90caf9;
+  margin-top: 0.2rem;
+}
+.dashboard-sections {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.dashboard-section {
+  background: #232323;
+  border-radius: 10px;
+  padding: 1.5rem 1.2rem;
+  flex: 1 1 350px;
+  min-width: 320px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+}
+.dashboard-section-half {
+  flex: 1 1 45%;
+}
+.dashboard-section-full {
+  background: #232323;
+  border-radius: 10px;
+  padding: 2rem 1.2rem 2.5rem 1.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+  width: 100%;
+  max-width: 100%;
+}
+.dashboard-section-title {
+  color: #ff9800;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+.dashboard-table th, .dashboard-table td {
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid #444;
+  text-align: left;
+}
+.dashboard-table th {
+  color: #ffd700;
+  font-weight: 700;
+  background: #232323;
+}
+.dashboard-table tr:last-child td {
+  border-bottom: none;
+}
+.dashboard-placeholder {
+  color: #aaa;
+  font-style: italic;
+  padding: 1rem 0;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .dashboard-cards, .dashboard-sections {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .dashboard-section-half {
+    min-width: 0;
+  }
+  .dashboard-section-full {
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+  }
+}
