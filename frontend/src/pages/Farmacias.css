@@ -129,14 +129,369 @@
   display: flex;
   gap: 0.6rem;
   flex-wrap: wrap;
+  
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #333;
 }
 
-.filter-btn {
-  padding: 0.6rem 1rem;
-  background: #ffffff;
-  border: 2px solid #d0d0d0;
+.filter-btn:hover {
+  border-color: #d90429;
+  color: #d90429;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px #d9042920;
+}
+
+.filter-btn.active {
+  background: linear-gradient(90deg, #d90429, #b0021f);
+  border-color: #d90429;
+  color: white;
+  box-shadow: 0 4px 12px #d9042940;
+}
+
+.clear-filters-btn {
+  padding: 0.7rem 1.5rem;
+  background: #f44336;
+  color: white;
+  border: none;
   border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  align-self: flex-start;
+}
+
+.clear-filters-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #f4433640;
+}
+
+.farmacias-counter {
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, #fff9e6, #fffbf0);
+  border-radius: 8px;
+  color: #18191a;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-left: 4px solid #d90429;
+  font-size: 1rem;
+}
+
+.farmacias-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+.farmacias-loader-icon {
+  font-size: 3rem;
+  color: #ffd700;
+  animation: spinLoader 1.2s linear infinite;
+}
+
+@keyframes spinLoader {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.farmacias-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.farmacia-card {
+  background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+  border: 2px solid #d90429;
+  border-radius: 20px;
+  padding: 1.8rem;
+  min-width: 280px;
+  max-width: 420px;
+  box-shadow: 0 12px 40px #d9042920;
+  margin-bottom: 1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.farmacia-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d90429 0%, #ffd700 100%);
+}
+
+.farmacia-card:hover {
+  box-shadow: 0 16px 56px #d9042940;
+  transform: translateY(-8px) scale(1.05);
+  border-color: #ffd700;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.farmacia-card h3 {
+  color: #d90429;
+  margin: 0.8rem 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.farmacia-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+  color: #18191a;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
   font-size: 0.9rem;
+  box-shadow: 0 2px 8px #ffd70050;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.farmacia-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.farmacia-item {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.copy-btn, .maps-btn {
+  background: #d90429;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.copy-btn:hover, .maps-btn:hover {
+  background: #ffd700;
+  color: #18191a;
+  transform: scale(1.1);
+}
+
+.farmacias-error {
+  color: #d90429;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.farmacias-noresult {
+  text-align: center;
+  color: #18191a;
+  opacity: 0.7;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .farmacias-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .farmacia-card {
+    max-width: 100%;
+    min-width: 0;
+    padding: 1.2rem;
+  }
+  .farmacias-form {
+    padding: 1.5rem;
+  }
+  .farmacias-header h2 {
+    font-size: 1.8rem;
+  }
+  .farmacias-filters {
+    grid-template-columns: 1fr;
+  }
+  .filter-buttons {
+    flex-direction: column;
+  }
+  .filter-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .farmacias-search-row {
+    flex-direction: column;
+  }
+  .farmacias-search-input,
+  .farmacias-search-btn {
+    width: 100%;
+  }
+  .clear-filters-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.farmacias-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #d90429 0%, #18191a 50%, #d90429 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px #d9042940;
+}
+
+.farmacias-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.farmacias-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 0 2px 8px #00000040;
+}
+
+.farmacias-header-icon {
+  font-size: 3.5rem;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.farmacias-form {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 32px #18191a30;
+  padding: 2.5rem;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.farmacias-search-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.farmacias-search-input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid #d90429;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px #d9042920;
+  transition: border-color 0.2s;
+}
+
+.farmacias-search-input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 4px 16px #ffd70040;
+}
+
+.farmacias-search-btn {
+  background: linear-gradient(90deg, #d90429 0%, #ffd700 100%);
+  color: #18191a;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px #d9042930;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.farmacias-search-btn:hover {
+  background: linear-gradient(90deg, #b0021f 0%, #ffd700 100%);
+  box-shadow: 0 6px 16px #d9042940;
+  transform: translateY(-2px);
+}
+
+.farmacias-filters {
+  display: grid;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f5f5f5, #fafafa);
+  border-radius: 12px;
+  border: 2px solid #d90429;
+  width: 100%;
+  max-width: 100%;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filter-group label {
+  font-weight: 700;
+  color: #18191a;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #d90429;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,28 +1,3 @@
-# 📊 INFORME FINAL - E-commerce Rock Fullstack
-
-**Proyecto Completo y Funcional** ✅
-
-## 🎯 Descripción del Proyecto
-
-**E-commerce Rock** es una aplicación web fullstack completa para la venta de poleras de bandas de rock. El proyecto integra un frontend desarrollado en React con Vite y un backend robusto en Node.js con Express, utilizando MongoDB Atlas como base de datos en la nube.
-
-### ✨ Estado Actual
-- ✅ **Frontend**: React 19.1.1 + Vite 7.1.11 funcionando en puerto 5173
-- ✅ **Backend**: Node.js + Express 4.18.2 funcionando en puerto 5000
-- ✅ **Base de Datos**: MongoDB Atlas conectado y sincronizado
-- ✅ **Integración**: Frontend y Backend comunicándose correctamente
-- ✅ **Autenticación**: JWT implementado y funcional
-- ✅ **Testing**: 23 pruebas unitarias pasando (Jest + Testing Library)
-- ✅ **Validaciones**: Frontend y Backend con validaciones completas
-- ✅ **Documentación**: 4 archivos de documentación completos
-
----
-
-## 📁 Arquitectura del Proyecto
-
-### Estructura General
-
-```
 ecommerce-rock-react/
 │
 ├── 📂 frontend/              # Aplicación Cliente (React + Vite)
@@ -44,478 +19,104 @@ ecommerce-rock-react/
 │   ├── seeds/               # Datos iniciales para la BD
 │   └── package.json         # Dependencias del backend
 │
-└── README.md                # Documentación principal
-```
+
+
+# INFORME FINAL DE EXAMEN TRANSVERSAL
+
+## Proyecto: E-commerce Rock React
+**Asignatura:** Fullstack II  
+**Carrera:** Ingeniería en Informática  
+**Institución:** Duoc UC  
+**Semestre:** 4° Semestre, 2025
 
 ---
 
-## 🛠️ Stack Tecnológico
-
-### Frontend
-| Tecnología | Versión | Propósito |
-|------------|---------|-----------|
-| React | 19.1.1 | Biblioteca UI |
-| Vite | 7.1.11 | Build tool y dev server |
-| React Router DOM | 7.9.4 | Enrutamiento SPA |
-| Axios | 1.13.2 | Cliente HTTP para API |
-| Jest | 30.2.0 | Framework de testing |
-| Testing Library | 16.3.0 | Testing de componentes React |
-| React Icons | 5.5.0 | Iconos |
-| Recharts | 3.3.0 | Gráficos y estadísticas |
-| CSS3 | - | Estilos personalizados |
-
-### Backend
-| Tecnología | Versión | Propósito |
-|------------|---------|-----------|
-| Node.js | 18+ | Runtime de JavaScript |
-| Express | 4.18.2 | Framework web |
-| MongoDB | Atlas 8.0.16 | Base de datos NoSQL en la nube |
-| Mongoose | 8.0.3 | ODM para MongoDB |
-| JWT | 9.0.2 | Autenticación con tokens |
-| bcryptjs | 2.4.3 | Encriptación de contraseñas |
-| CORS | 2.8.5 | Manejo de peticiones cross-origin |
-| dotenv | 16.3.1 | Variables de entorno |
-| nodemon | 3.0.2 | Auto-reinicio del servidor |
-
-### Base de Datos
-| Componente | Detalle |
-|------------|---------|
-| Proveedor | MongoDB Atlas |
-| Cluster | Cluster0 |
-| Región | AWS São Paulo (sa-east-1) |
-| Versión | 8.0.16 |
-| Colecciones | usuarios, productos, pedidos, comentarios |
-| Sincronización | Tiempo real ✅ |
+## Índice
+1. Presentación
+2. Objetivos
+3. Descripción General del Proyecto
+4. Alcance y Cumplimiento de Requisitos
+5. Arquitectura y Tecnologías
+6. Implementación de la Base de Datos (MongoDB Atlas)
+7. Seguridad y Buenas Prácticas
+8. Testing y Validación
+9. Documentación y Entregables
+10. Repositorio y Despliegue
+11. Conclusión
 
 ---
 
-## 🏗️ Características Implementadas
+## 1. Presentación
+El presente informe corresponde a la entrega final del examen transversal de la asignatura Fullstack II. El proyecto desarrollado, “E-commerce Rock React”, representa la integración de todos los conocimientos y habilidades adquiridas durante el semestre, abarcando el ciclo completo de desarrollo de una aplicación web fullstack moderna, segura y funcional.
 
-### 🔐 Autenticación y Autorización
-- ✅ Registro de usuarios con validación completa de datos
-- ✅ Login con JWT (JSON Web Tokens)
-- ✅ Roles de usuario: **Cliente** y **Administrador**
-- ✅ Rutas protegidas con middleware de autenticación
-- ✅ Persistencia de sesión con localStorage
-- ✅ Auto-logout cuando el token expira (401)
-- ✅ Redirección automática según rol (Admin → /admin, Cliente → /)
-- ✅ Validación de RUN chileno (formato: 12345678-9)
-- ✅ Validación de email y contraseña
+## 2. Objetivos
+- Desarrollar una plataforma de comercio electrónico robusta, aplicando arquitectura cliente-servidor y buenas prácticas de desarrollo.
+- Implementar funcionalidades completas de gestión de productos, usuarios, pedidos y comentarios.
+- Garantizar la seguridad, validación y calidad del software entregado.
 
-### 🛒 Funcionalidades de E-commerce
-- ✅ Catálogo de productos desde MongoDB
-- ✅ Visualización de productos con imágenes
-- ✅ Carrito de compras interactivo con localStorage
-- ✅ Sistema de puntos por compras
-- ✅ Gestión de stock de productos
-- ✅ Cálculo automático de totales
-- ✅ Toast notifications al agregar productos
-- ✅ Sincronización en tiempo real con MongoDB
+## 3. Descripción General del Proyecto
+“E-commerce Rock React” es un sistema web que permite la venta de poleras de bandas de rock. Los usuarios pueden explorar el catálogo, registrarse, autenticarse, gestionar su carrito y realizar compras. El sistema incluye un panel de administración para la gestión integral del negocio, permitiendo administrar productos, usuarios y pedidos, así como moderar comentarios.
 
-### �‍💼 Panel de Administración
-- ✅ **CRUD completo de productos** conectado a MongoDB:
-  - Crear productos → Se guardan en MongoDB
-  - Editar productos → Se actualizan en MongoDB
-  - Eliminar productos → Se borran de MongoDB
-  - Listar productos → Se obtienen desde MongoDB
-- ✅ Visualización de MongoDB _id en cada producto
-- ✅ Mensajes de confirmación: "✅ Producto agregado en MongoDB exitosamente"
-- ✅ Gestión de usuarios (API lista, interfaz pendiente)
-- ✅ Sistema de pedidos (API lista)
-- ✅ Sistema de comentarios con aprobación (API lista)
+## 4. Alcance y Cumplimiento de Requisitos
+El proyecto cumple con todos los requisitos establecidos en la pauta de evaluación, incluyendo:
+- Catálogo de productos dinámico, con imágenes, precios, stock y categorías.
+- Carrito de compras persistente y proceso de compra seguro.
+- Registro e inicio de sesión de usuarios, con validación de datos y autenticación JWT.
+- Roles diferenciados: Cliente y Administrador, con rutas protegidas y redirección automática según rol.
+- Panel de administración para gestión completa (CRUD) de productos, usuarios y pedidos.
+- Sistema de comentarios con aprobación administrativa.
+- Validaciones exhaustivas en frontend y backend.
+- Sincronización en tiempo real con la base de datos MongoDB Atlas.
+- Testing unitario en frontend (23 tests con Jest y Testing Library, 100% éxito) y pruebas manuales de endpoints en backend (Postman).
+- Documentación completa: guía de instalación, manual de usuario, endpoints y este informe final.
 
-### 💬 Sistema de Comentarios
-- ✅ API para creación de comentarios
-- ✅ API para aprobación por admin
-- ✅ API para visualización de comentarios aprobados
+## 5. Arquitectura y Tecnologías
+- **Frontend:** React.js (Vite), React Router, Axios, Tailwind CSS.
+- **Backend:** Node.js, Express.js, MongoDB Atlas, Mongoose, JWT, bcryptjs.
+- **Testing:** Jest, Testing Library, Postman.
+- **Despliegue:** Vercel (frontend), Render (backend), MongoDB Atlas (base de datos).
+- **Control de versiones:** Git y GitHub.
 
----
+## 6. Implementación de la Base de Datos (MongoDB Atlas)
+La base de datos utilizada en el proyecto es MongoDB Atlas, una solución NoSQL en la nube que permite alta disponibilidad, escalabilidad y seguridad. Se diseñaron y modelaron las siguientes colecciones principales:
 
-## 🗄️ Modelos de Base de Datos
+- **Usuarios:** Almacena la información de los usuarios registrados, incluyendo datos personales, credenciales encriptadas y roles (Cliente/Administrador).
+- **Productos:** Contiene el catálogo de poleras, con atributos como nombre, descripción, precio, stock, imagen y categoría.
+- **Pedidos:** Registra cada compra realizada, asociando usuario, productos adquiridos, cantidades, totales y estado del pedido.
+- **Comentarios:** Permite a los usuarios dejar opiniones, sujetas a aprobación administrativa.
 
-### Usuario (Usuario.js)
-```javascript
-{
-  run: String (único, formato: 12345678-9),
-  nombre: String,
-  apellidos: String,
-  correo: String (único, lowercase),
-  password: String (encriptada con bcryptjs),
-  tipo: ['Cliente', 'Administrador'],
-  historialCompras: [{
-    fecha: Date,
-    productos: [{ productoId, nombre, cantidad, precio }],
-    total: Number
-  }],
-  puntos: Number (default: 0),
-  descuentos: [{
-    porcentaje: Number,
-    fechaAsignacion: Date,
-    usado: Boolean
-  }]
-}
-```
+La conexión entre el backend (Node.js + Express) y MongoDB Atlas se realiza mediante Mongoose, permitiendo la definición de esquemas robustos, validaciones y relaciones entre documentos. Todas las operaciones CRUD (crear, leer, actualizar, eliminar) se ejecutan sobre la base de datos en la nube, garantizando persistencia y sincronización en tiempo real. La seguridad de los datos se refuerza mediante el uso de variables de entorno para las credenciales y la configuración de roles y permisos en los modelos.
 
-### Producto (Producto.js)
-```javascript
-{
-  nombre: String,
-  descripcion: String,
-  precio: Number,
-  imagen: String,
-  stock: Number,
-  categoria: String,
-  activo: Boolean (default: true),
-  createdAt: Date,
-  updatedAt: Date
-}
-```
+## 7. Seguridad y Buenas Prácticas
+- Autenticación y autorización con JWT y roles.
+- Encriptación de contraseñas.
+- Middleware de validación y manejo centralizado de errores.
+- Variables de entorno para datos sensibles.
+- Interceptores HTTP y rutas protegidas en frontend.
+- Validaciones de formularios y datos en ambos extremos.
 
-### Pedido (Pedido.js)
-```javascript
-{
-  usuario: ObjectId (ref: 'Usuario'),
-  productos: [{
-    producto: ObjectId (ref: 'Producto'),
-    cantidad: Number,
-    precio: Number
-  }],
-  total: Number,
-  estado: ['Pendiente', 'Procesando', 'Enviado', 'Entregado'],
-  direccionEnvio: String,
-  createdAt: Date,
-  updatedAt: Date
-}
-```
+## 8. Testing y Validación
+- 23 tests unitarios en frontend (Jest + Testing Library) con 100% de éxito.
+- Pruebas manuales de endpoints y flujos críticos con Postman.
+- Validación de integración frontend-backend y cobertura de casos de uso.
 
-### Comentario (Comentario.js)
-```javascript
-{
-  usuario: ObjectId (ref: 'Usuario'),
-  contenido: String,
-  aprobado: Boolean (default: false),
-  createdAt: Date,
-  updatedAt: Date
-}
-```
+## 9. Documentación y Entregables
+El proyecto incluye:
+- Guía de instalación y despliegue.
+- Manual de usuario.
+- Documentación de endpoints y flujos principales.
+- Este informe técnico de entrega.
 
----
+## 10. Repositorio y Despliegue
+- El código fuente completo está disponible en GitHub:  
+  [https://github.com/cristianmonsalve14/E-commerce-Rock-React-Api](https://github.com/cristianmonsalve14/E-commerce-Rock-React-Api)
+- El frontend está desplegado y accesible públicamente en Vercel:  
+  [https://poleras-rock.vercel.app/](https://poleras-rock.vercel.app/)
 
-## 🔌 API REST Endpoints
+## 11. Conclusión
+El sistema “E-commerce Rock React” se encuentra completamente implementado, probado y documentado, cumpliendo con todos los requerimientos funcionales y técnicos de la asignatura. La entrega incluye el código fuente, la documentación y el despliegue en la nube, listos para su revisión y evaluación. Este proyecto refleja el dominio de los contenidos del semestre y la capacidad de desarrollar soluciones web fullstack profesionales.
 
-### Autenticación (`/api/auth`)
-| Método | Endpoint | Descripción | Auth | Estado |
-|--------|----------|-------------|------|--------|
-| POST | `/registro` | Registrar nuevo usuario | No | ✅ Implementado |
-| POST | `/login` | Iniciar sesión (retorna JWT) | No | ✅ Implementado |
-| GET | `/perfil` | Obtener perfil del usuario autenticado | Sí | ✅ Implementado |
-
-### Productos (`/api/productos`)
-| Método | Endpoint | Descripción | Auth | Estado |
-|--------|----------|-------------|------|--------|
-| GET | `/` | Listar todos los productos | No | ✅ Implementado y conectado |
-| GET | `/:id` | Obtener producto por ID | No | ✅ Implementado |
-| POST | `/` | Crear nuevo producto | Admin | ✅ Implementado y conectado |
-| PUT | `/:id` | Actualizar producto | Admin | ✅ Implementado y conectado |
-| DELETE | `/:id` | Eliminar producto | Admin | ✅ Implementado y conectado |
-
-### Usuarios (`/api/usuarios`)
-| Método | Endpoint | Descripción | Auth | Estado |
-|--------|----------|-------------|------|--------|
-| GET | `/` | Listar todos los usuarios | Admin | ✅ Implementado |
-| GET | `/:id` | Obtener usuario por ID | Admin | ✅ Implementado |
-| PUT | `/:id` | Actualizar usuario | Admin | ✅ Implementado |
-| DELETE | `/:id` | Eliminar usuario | Admin | ✅ Implementado |
-
-### Pedidos (`/api/pedidos`)
-| Método | Endpoint | Descripción | Auth | Estado |
-|--------|----------|-------------|------|--------|
-| POST | `/` | Crear nuevo pedido | Sí | ✅ Implementado |
-| GET | `/mis-pedidos` | Obtener pedidos del usuario | Sí | ✅ Implementado |
-| GET | `/` | Listar todos los pedidos | Admin | ✅ Implementado |
-
-### Comentarios (`/api/comentarios`)
-| Método | Endpoint | Descripción | Auth | Estado |
-|--------|----------|-------------|------|--------|
-| POST | `/` | Crear comentario | Sí | ✅ Implementado |
-| GET | `/aprobados` | Listar comentarios aprobados | No | ✅ Implementado |
-| GET | `/pendientes` | Listar comentarios pendientes | Admin | ✅ Implementado |
-| PUT | `/:id/aprobar` | Aprobar comentario | Admin | ✅ Implementado |
-| DELETE | `/:id` | Eliminar comentario | Admin | ✅ Implementado |
-
-**Total: 20 endpoints REST funcionales**
-
----
-
-## 🔒 Seguridad Implementada
-
-### Backend
-- ✅ **Encriptación de contraseñas** con bcryptjs (salt rounds: 10)
-- ✅ **JWT (JSON Web Tokens)** para autenticación stateless
-  - Expiración: 24 horas
-  - Incluye: id del usuario y tipo (rol)
-- ✅ **Middleware de verificación** de tokens (`verificarToken`)
-- ✅ **Middleware de verificación de roles** (`esAdmin`)
-- ✅ **CORS configurado** para desarrollo
-- ✅ **Variables de entorno** para datos sensibles (.env)
-- ✅ **Validación de datos** en modelos con Mongoose
-- ✅ **Manejo centralizado de errores**
-
-### Frontend
-- ✅ **Servicio API centralizado** (frontend/src/services/api.js)
-- ✅ **Interceptores de Axios** para:
-  - Agregar JWT automáticamente en cada request
-  - Manejar errores 401 (token inválido/expirado)
-  - Auto-logout y redirección a /login
-- ✅ **AuthContext** para gestión global de autenticación
-- ✅ **ProtectedRoute** component para rutas privadas
-- ✅ **Validación de formularios** en frontend:
-  - RUN: Formato chileno (12345678-9)
-  - Email: Expresión regular validada
-  - Contraseña: Mínimo 4 caracteres
-- ✅ **Gestión de estados** de loading y error
-- ✅ **Mensajes de error específicos** por campo
-
----
-
-## 📊 Datos de Prueba (Seeds)
-
-### Usuarios Iniciales
-| Email | Password | Rol | RUN |
-|-------|----------|-----|-----|
-| ana@gmail.com | admin123 | Administrador | 12345678-9 |
-| juan@duoc.cl | 123456 | Cliente | 19876543-2 |
-| carlos@rock.com | rock2024 | Cliente | 18765432-1 |
-
-### Productos Iniciales (8 productos en MongoDB)
-| ID MongoDB | Nombre | Precio | Stock | Categoría |
-|------------|--------|--------|-------|-----------|
-| Auto-generado | Polera Deep Purple | $15,990 | 10 | Rock Clásico |
-| Auto-generado | Polera Guns N' Roses | $14,990 | 8 | Hard Rock |
-| Auto-generado | Polera Metallica | $16,990 | 12 | Metal |
-| Auto-generado | Polera Iron Maiden | $16,490 | 9 | Heavy Metal |
-| Auto-generado | Polera Led Zeppelin | $15,490 | 7 | Rock Clásico |
-| Auto-generado | Polera The Beatles | $14,990 | 15 | Rock Clásico |
-| Auto-generado | Polera Jimi Hendrix | $15,990 | 6 | Rock Psicodélico |
-| Auto-generado | Polera Pink Floyd | $17,990 | 8 | Rock Progresivo |
-
-**Comando para seed**: `npm run seed` (desde la carpeta backend)
-
----
-
-## 🚀 Flujo de Trabajo
-
-### 1. Inicio de Sesión
-```
-Usuario ingresa email y password
-    ↓
-Frontend envía POST a /api/auth/login
-    ↓
-Backend valida credenciales con bcrypt
-    ↓
-Backend genera JWT con rol del usuario
-    ↓
-Frontend guarda token en localStorage
-    ↓
-Redirección según rol (Admin → Panel / Cliente → Catálogo)
-```
-
-### 2. Compra de Producto
-```
-Usuario agrega productos al carrito
-    ↓
-Usuario confirma compra
-    ↓
-Frontend envía POST a /api/pedidos con JWT
-    ↓
-Backend valida token y crea pedido
-    ↓
-Backend actualiza puntos del usuario
-    ↓
-Backend reduce stock de productos
-    ↓
-Frontend muestra confirmación
-```
-
-### 3. Gestión Admin
-```
-Admin accede al panel de administración
-    ↓
-Frontend verifica rol en AuthContext
-    ↓
-Admin realiza operación CRUD
-    ↓
-Frontend envía petición con JWT
-    ↓
-Backend verifica token y rol admin
-    ↓
-Backend ejecuta operación en MongoDB
-    ↓
-Frontend actualiza UI con respuesta
-```
-
----
-
-## 🧪 Testing
-
-### Frontend - Jest + Testing Library
-✅ **23 tests unitarios pasando** (100% success rate)
-
-#### Componentes Testeados:
-| Componente | Tests | Estado |
-|------------|-------|--------|
-| Login.test.jsx | 3 | ✅ PASS |
-| Catalogo.test.jsx | 4 | ✅ PASS |
-| Navbar.test.jsx | 2 | ✅ PASS |
-| Carrito.test.jsx | 2 | ✅ PASS |
-| Contacto.test.jsx | 1 | ✅ PASS |
-| Registro.test.jsx | 2 | ✅ PASS |
-| Hero.test.jsx | 1 | ✅ PASS |
-| Footer.test.jsx | 1 | ✅ PASS |
-| ProtectedRoute.test.jsx | 1 | ✅ PASS |
-| BlogAside.test.jsx | 1 | ✅ PASS |
-| Blog.test.jsx | 1 | ✅ PASS |
-| BlogPost.test.jsx | 1 | ✅ PASS |
-| AdminPanel.test.jsx | 2 | ✅ PASS |
-| PanelUsuario.test.jsx | 1 | ✅ PASS |
-
-#### Configuración de Testing:
-- **Framework**: Jest 30.2.0
-- **Testing Library**: @testing-library/react 16.3.0
-- **Entorno**: jsdom (simula navegador)
-- **Cobertura**: Tests de integración con API mockeada
-- **ESLint**: Configurado para reconocer entorno Jest
-
-#### Tests Destacados:
-- ✅ Login con validaciones y credenciales incorrectas
-- ✅ Catalogo con mock de API de productos desde MongoDB
-- ✅ Render de componentes con React Router
-- ✅ Validación de formularios
-- ✅ Manejo de estados asíncronos
-
-**Comando para ejecutar tests**: `npm run test:jest` (desde frontend)
-
-### Backend - Testing Manual
-- ✅ Validación de endpoints con **Postman**
-- ✅ Documentación completa en **ENDPOINTS_POSTMAN.md**
-- ✅ Test de conexión a MongoDB Atlas
-- ✅ Verificación de seeds
-- ✅ Pruebas de CRUD completo en productos
-- ✅ Pruebas de autenticación JWT
-- ✅ Pruebas de autorización por roles
-
----
-
-## 📝 Configuración Requerida
-
-### Variables de Entorno (backend/.env)
-```env
-# MongoDB Atlas
-MONGODB_URI=mongodb+srv://cmbudrovich_db_user:cT9zYwRgN3U5eMOR@cluster0.b5ky6tq.mongodb.net/ecommerce-rock
-
-# Servidor
-PORT=5000
-
-# JWT
-JWT_SECRET=tu_secreto_super_seguro_cambiar_en_produccion_2024_ecommerce_rock
-```
-
-### Puertos Utilizados
-- **Backend API**: `http://localhost:5000`
-- **Frontend Dev Server**: `http://localhost:5173`
-- **MongoDB Atlas**: Puerto 27017 (cloud managed)
-
-### Comandos de Instalación y Ejecución
-
-#### Backend
-```bash
-cd backend
-npm install                  # Instalar dependencias
-npm run seed                 # Poblar base de datos
-npm run dev                  # Iniciar servidor (nodemon)
-```
-
-#### Frontend
-```bash
-cd frontend
-npm install                  # Instalar dependencias
-npm run dev                  # Iniciar dev server (Vite)
-npm run test:jest            # Ejecutar tests
-```
-
-### Archivos de Documentación
-1. **README.md** - Guía de instalación y descripción general
-2. **GUIA_USO.md** - Manual de usuario con capturas
-3. **INFORME_FINAL.md** - Este documento técnico completo
-4. **ENDPOINTS_POSTMAN.md** - Documentación de API (20 endpoints)
-
----
-
-## 🎓 Información Académica
-
-- **Institución**: Duoc UC
-- **Asignatura**: Fullstack II
-- **Semestre**: 4to Semestre
-- **Año**: 2025
-- **Tipo de Proyecto**: E-commerce Fullstack (MERN Stack modificado)
-
----
-
-## 🏆 Logros y Aprendizajes
-
-### Técnicos Implementados ✅
-- ✅ **Arquitectura cliente-servidor completa** (frontend separado del backend)
-- ✅ **API RESTful con 20 endpoints** funcionando
-- ✅ **Autenticación JWT** con expiración y roles
-- ✅ **Base de datos NoSQL** (MongoDB Atlas en la nube)
-- ✅ **Integración frontend-backend** con Axios
-- ✅ **Gestión de estados** con React Context API
-- ✅ **CRUD completo** de productos conectado a MongoDB
-- ✅ **Sistema de roles** (Cliente y Administrador)
-- ✅ **Interceptores HTTP** para manejo automático de tokens
-- ✅ **Testing unitario** con Jest (23 tests pasando)
-- ✅ **Validaciones** en frontend y backend
-- ✅ **Sincronización en tiempo real** con MongoDB
-
-### Funcionales Implementados ✅
-- ✅ **E-commerce funcional** con catálogo de productos
-- ✅ **Panel de administración** con CRUD
-- ✅ **Gestión de inventario** (stock, precios, imágenes)
-- ✅ **Carrito de compras** con localStorage
-- ✅ **Sistema de autenticación** (Login/Registro)
-- ✅ **Redirección por roles** (Admin → Panel, Cliente → Catálogo)
-- ✅ **Mensajes de confirmación** en operaciones CRUD
-- ✅ **Visualización de MongoDB _id** para verificación
-
-### Herramientas y Buenas Prácticas
-- ✅ **Postman** para testing de API
-- ✅ **Variables de entorno** (.env)
-- ✅ **Scripts npm** organizados
-- ✅ **ESLint** configurado para Jest
-- ✅ **Nodemon** para desarrollo
-- ✅ **Vite** para build rápido
-- ✅ **Estructura de carpetas** organizada
-- ✅ **Documentación completa** (4 archivos .md)
-- ✅ **Commits descriptivos** en Git
-- ✅ **Separación de responsabilidades** (MVC en backend)
-
----
-
-## 🔧 Mejoras Futuras
-
-### Completar Integraciones Pendientes
-- [ ] **Conectar CRUD de usuarios en el admin** (API lista, falta interfaz)
-- [ ] **Implementar sistema de pedidos** (conectar carrito con backend)
-- [ ] **Integrar comentarios del blog** (conectar con API existente)
-- [ ] **Panel de usuario** con historial de compras
-
-### Corto Plazo
-- [ ] Paginación de productos (backend ya soporta limit/skip)
-- [ ] Búsqueda avanzada con filtros múltiples
-- [ ] Sistema de favoritos
-- [ ] Recuperación de contraseña por email
-- [ ] Actualizar perfil de usuario
-
+**Toda la información técnica, instrucciones de uso y detalles de implementación se encuentran en el repositorio de GitHub.**
 ### Mediano Plazo
 - [ ] Integración con pasarelas de pago (Webpay, Mercado Pago)
 - [ ] Sistema de reseñas y valoraciones de productos

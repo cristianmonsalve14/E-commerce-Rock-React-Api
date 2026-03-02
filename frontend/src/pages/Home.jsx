@@ -3,12 +3,11 @@ import Hero from '../components/Hero';
 import BlogAside from '../components/BlogAside';
 import '../components/HomeLayout.css';
 import { GiGuitarHead } from 'react-icons/gi';
-import FarmaciasButton from '../components/FarmaciasButton';
+
 
 function Home() {
   return (
     <Layout>
-      <FarmaciasButton />
       <section className="home-header-box">
         <div className="home-title-row">
           <GiGuitarHead className="home-title-icon" />

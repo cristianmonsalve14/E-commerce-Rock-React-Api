@@ -15,7 +15,7 @@ import BlogPage from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import PanelUsuario from './pages/PanelUsuario';
 import ProtectedRoute from './components/ProtectedRoute';
-import Farmacias from './pages/Farmacias';
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -74,7 +74,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalogo" element={<CatalogoPage onAddToCart={handleAddToCart} />} />
-          <Route path="/farmacias" element={<Farmacias />} />
+
           <Route path="/admin" element={
             <ProtectedRoute requireAdmin={true}>
               <AdminPanel />
